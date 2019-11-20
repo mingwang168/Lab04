@@ -22,14 +22,8 @@ namespace Lab04
                 {
                     Menu.ShowMonkey();
                     Menu.ShowWeight();
-                    decimal cleanNum1 = 0;
                     var inputWightInString = Console.ReadLine();
-                    while (!decimal.TryParse(inputWightInString, out cleanNum1))
-                    {
-                        Console.Write("This is not valid input. Please enter an decimal value: ");
-                        inputWightInString = Console.ReadLine();
-                    }
-                    var inputWeight = float.Parse(inputWightInString);
+                    var inputWeight = float.Parse(ValidateWeight(inputWightInString));
                     Menu.ShowMealRecommendation();
                     monkeyArray[Menu.selectMonkey - 1].PrintServing(inputWeight);
                     monkeyArray[Menu.selectMonkey - 1].ShowInstruction();
@@ -38,14 +32,8 @@ namespace Lab04
                 {
                     Menu.ShowBear();
                     Menu.ShowWeight();
-                    decimal cleanNum1 = 0;
                     var inputWightInString = Console.ReadLine();
-                    while (!decimal.TryParse(inputWightInString, out cleanNum1))
-                    {
-                        Console.Write("This is not valid input. Please enter an decimal value: ");
-                        inputWightInString = Console.ReadLine();
-                    }
-                    var inputWeight = float.Parse(inputWightInString);
+                    var inputWeight = float.Parse(ValidateWeight(inputWightInString));
                     Menu.ShowMealRecommendation();
                     bearArray[Menu.selectBear - 1].PrintServing(inputWeight);
                     bearArray[Menu.selectBear - 1].ShowInstruction();
@@ -55,7 +43,16 @@ namespace Lab04
                 Menu.selectBearInString = "";
                 Menu.ShowMainMenu();
             }
-
+        }
+        private static string ValidateWeight(string inputWightInString)
+        {
+            decimal cleanNum1 = 0;
+            while (!decimal.TryParse(inputWightInString, out cleanNum1))
+            {
+                Console.Write("This is not valid input. Please enter an decimal value: ");
+                inputWightInString = Console.ReadLine();
+                            }
+            return inputWightInString;
         }
     }
 }

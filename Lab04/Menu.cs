@@ -6,12 +6,14 @@ namespace Lab04
 {
     public class Menu
     {
+        public static int selectMainMenu;
         public static void ShowMainMenu()
         {
             Console.WriteLine("================");
             Console.WriteLine("Zoo Menu Planner");
             Console.WriteLine("================");
             Console.Write("1. Monkey\n2. Bear\n3. Quit\nSelection:");
+            selectMainMenu = int.Parse(Console.ReadLine());
         }
         public static void ShowMonkey()
         {
@@ -28,6 +30,11 @@ namespace Lab04
         public static void ShowWeight()
         {
             Console.Write("Weight in KG: ");
+        }
+        public static void ShowMealRecommendation()
+        {
+            Console.WriteLine("Meal Recommendation ");
+            Console.WriteLine("================");
         }
     }
 }

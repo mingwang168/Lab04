@@ -8,7 +8,7 @@ namespace Lab04
     {
         public string type { get; set; }
         public string Species { get; set; }
-        public Bear(float Weight, string FoodPreference, string FeedTime, float FoodIntake, float ServingRatio,string Species) : base(Weight, FoodPreference, FeedTime, FoodIntake, ServingRatio)
+        public Bear(string FoodPreference, string FeedTime, float ServingRatio,string Species) : base(FoodPreference, FeedTime,  ServingRatio)
         {
             type = "bear";
             this.Species = Species;

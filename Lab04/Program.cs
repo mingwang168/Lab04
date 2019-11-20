@@ -6,47 +6,53 @@ namespace Lab04
     {
         static void Main(string[] args)
         {
-            Monkey[] monkeyArray = new Monkey[3];
+            Mammal[] monkeyArray = new Monkey[3];
             monkeyArray[0]= new Monkey( 0.006f, "Squirrel");
             monkeyArray[1] = new Monkey( 0.007f, "Howler");
             monkeyArray[2] = new Monkey( 0.008f, "Colobus");
-            Bear[] bearArray = new Bear[2];
+            Mammal[] bearArray = new Bear[2];
             bearArray[0] = new Bear(0.014f, "Black","berries, green vegetation, flowers, fruits, fish");
             bearArray[1] = new Bear( 0.016f, "Polar","berries, fish");
-
-
 
             Menu.ShowMainMenu();
 
             while (Menu.selectMainMenu != 3)
             {
-
                 if (Menu.selectMainMenu == 1)
                 {
                     Menu.ShowMonkey();
-                    var selectMonkey = int.Parse(Console.ReadLine());
                     Menu.ShowWeight();
-                    var inputWeight = float.Parse(Console.ReadLine());
+                    decimal cleanNum1 = 0;
+                    var inputWightInString = Console.ReadLine();
+                    while (!decimal.TryParse(inputWightInString, out cleanNum1))
+                    {
+                        Console.Write("This is not valid input. Please enter an decimal value: ");
+                        inputWightInString = Console.ReadLine();
+                    }
+                    var inputWeight = float.Parse(inputWightInString);
                     Menu.ShowMealRecommendation();
-                    Console.WriteLine($"Mammal Type:  {monkeyArray[selectMonkey-1].type}");
-                    Console.WriteLine($"Species:      {monkeyArray[selectMonkey - 1].Species}");
-                    Console.WriteLine($"Weight:       {inputWeight}KG");
-                    Console.WriteLine($"Serving:      {Math.Round(inputWeight * monkeyArray[selectMonkey - 1].ServingRatio, 3)}KG {monkeyArray[selectMonkey - 1].FoodPreference}");
-                    monkeyArray[selectMonkey - 1].ShowInstruction();
+                    monkeyArray[Menu.selectMonkey - 1].PrintServing(inputWeight);
+                    monkeyArray[Menu.selectMonkey - 1].ShowInstruction();
                 }
                 else if(Menu.selectMainMenu == 2)
                 {
                     Menu.ShowBear();
-                    var selectBear = int.Parse(Console.ReadLine());
                     Menu.ShowWeight();
-                    var inputWeight = float.Parse(Console.ReadLine());
+                    decimal cleanNum1 = 0;
+                    var inputWightInString = Console.ReadLine();
+                    while (!decimal.TryParse(inputWightInString, out cleanNum1))
+                    {
+                        Console.Write("This is not valid input. Please enter an decimal value: ");
+                        inputWightInString = Console.ReadLine();
+                    }
+                    var inputWeight = float.Parse(inputWightInString);
                     Menu.ShowMealRecommendation();
-                    Console.WriteLine($"Mammal Type:  {bearArray[selectBear - 1].type}");
-                    Console.WriteLine($"Species:      {bearArray[selectBear - 1].Species}");
-                    Console.WriteLine($"Weight:       {inputWeight}KG");
-                    Console.WriteLine($"Serving:      {Math.Round(inputWeight * bearArray[selectBear - 1].ServingRatio,3)}KG {bearArray[selectBear - 1].FoodPreference}");
-                    monkeyArray[selectBear - 1].ShowInstruction();
+                    bearArray[Menu.selectBear - 1].PrintServing(inputWeight);
+                    bearArray[Menu.selectBear - 1].ShowInstruction();
                 }
+                Menu.selectMainMenuInString = "";
+                Menu.selectMonkeyInString = "";
+                Menu.selectBearInString = "";
                 Menu.ShowMainMenu();
             }
 

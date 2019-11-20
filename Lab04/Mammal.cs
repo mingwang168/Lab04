@@ -8,16 +8,12 @@ namespace Lab04
     {
         public  string FoodPreference { get; set; }
         public  string FeedTime { get; set; }
-
-
         public float ServingRatio { get; set; }
+        public string Species { get; set; }
 
-
-        public Mammal( string FoodPreference,string FeedTime, float ServingRatio)
+        public Mammal(float ServingRatio,string Species)
         {
-            this.FoodPreference = FoodPreference;
-            this.FeedTime = FeedTime;
-
+            this.Species = Species;
             this.ServingRatio = ServingRatio;
         }
         public  void ShowInstruction()

@@ -8,12 +8,12 @@ namespace Lab04
     {
         public string type { get; set; }
         public string Species { get; set; }
-        public Monkey(string FoodPreference, string FeedTime, float ServingRatio, string Species) : base(FoodPreference, FeedTime, ServingRatio)
+        public Monkey(float ServingRatio, string Species) : base(ServingRatio, Species)
         {
-            this.type = "monkey";
+            FoodPreference = "fresh fruit, vegetables, nuts, insects, berries";
+            FeedTime = "9AM, 12PM and 5PM";
+            type = "monkey";
             this.Species = Species;
         }
-
-
     }
 }

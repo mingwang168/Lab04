@@ -12,15 +12,16 @@ namespace Lab04
         public  float FoodIntake { get; set; }
 
         public float ServingRatio { get; set; }
-        public string Species { get; set; }
-        public Mammal(float Weight, string FoodPreference,string FeedTime,float FoodIntake, float ServingRatio, string Species)
+
+
+        public Mammal(float Weight, string FoodPreference,string FeedTime,float FoodIntake, float ServingRatio)
         {
             this.Weight = Weight;
             this.FoodPreference = FoodPreference;
             this.FeedTime = FeedTime;
             this.FoodIntake = FoodIntake;
             this.ServingRatio = ServingRatio;
-            this.Species = Species;
+
         }
         public  void ShowInstruction()
         {
@@ -28,7 +29,7 @@ namespace Lab04
             Console.WriteLine($"Feed at {FeedTime}");
         }
 
-        public  void ShowServing()
+        public virtual void ShowServing()
         {
             FoodIntake = Weight * ServingRatio;
             Console.WriteLine($"Serving:{FoodIntake} KG {FoodPreference}");

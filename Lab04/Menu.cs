@@ -11,19 +11,23 @@ namespace Lab04
             Console.WriteLine("================");
             Console.WriteLine("Zoo Menu Planner");
             Console.WriteLine("================");
-            Console.WriteLine("1. Monkey\n2. Bear\n3. Quit\nSelection:");
+            Console.Write("1. Monkey\n2. Bear\n3. Quit\nSelection:");
         }
         public static void ShowMonkey()
         {
             Console.WriteLine("Species");
             Console.WriteLine("----------------");
-            Console.WriteLine("1. Squirrel\n2. Howler\n3. Colobus\nSelection:");
+            Console.Write("1. Squirrel\n2. Howler\n3. Colobus\nSelection:");
         }
         public static void ShowBear()
         {
             Console.WriteLine("Species");
             Console.WriteLine("----------------");
-            Console.WriteLine("1. Black\n2. Polar\nSelection:");
+            Console.Write("1. Black\n2. Polar\nSelection:");
+        }
+        public static void ShowWeight()
+        {
+            Console.Write("Weight in KG: ");
         }
     }
 }

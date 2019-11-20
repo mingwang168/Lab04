@@ -25,8 +25,8 @@ namespace Lab04
                     var inputWightInString = Console.ReadLine();
                     var inputWeight = float.Parse(ValidateWeight(inputWightInString));
                     Menu.ShowMealRecommendation();
-                    monkeyArray[Menu.selectMonkey - 1].PrintServing(inputWeight);
-                    monkeyArray[Menu.selectMonkey - 1].ShowInstruction();
+                    monkeyArray[Menu.selectMonkey - 1].PrintDetail(inputWeight);
+
                 }
                 else if(Menu.selectMainMenu == 2)
                 {
@@ -35,8 +35,8 @@ namespace Lab04
                     var inputWightInString = Console.ReadLine();
                     var inputWeight = float.Parse(ValidateWeight(inputWightInString));
                     Menu.ShowMealRecommendation();
-                    bearArray[Menu.selectBear - 1].PrintServing(inputWeight);
-                    bearArray[Menu.selectBear - 1].ShowInstruction();
+                    bearArray[Menu.selectBear - 1].PrintDetail(inputWeight);
+
                 }
                 Menu.selectMainMenuInString = "";
                 Menu.selectMonkeyInString = "";
@@ -51,7 +51,7 @@ namespace Lab04
             {
                 Console.Write("This is not valid input. Please enter an decimal value: ");
                 inputWightInString = Console.ReadLine();
-                            }
+            }
             return inputWightInString;
         }
     }

@@ -16,18 +16,14 @@ namespace Lab04
             this.Species = Species;
             this.ServingRatio = ServingRatio;
         }
-        public  void ShowInstruction()
+        public  void PrintDetail(float inputWeight)
         {
             Console.WriteLine("Instructions: Keep area secure at all times.");
             Console.WriteLine($"              Feed at {FeedTime}");
-        }
-        public  void PrintServing(float inputWeight)
-        {
             Console.WriteLine($"Mammal Type:  {Type}");
             Console.WriteLine($"Species:      {Species}");
             Console.WriteLine($"Weight:       {inputWeight}KG");
             Console.WriteLine($"Serving:      {Math.Round(inputWeight * ServingRatio, 3)}KG {FoodPreference}");
         }
-
     }
 }
